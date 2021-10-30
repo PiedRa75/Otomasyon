@@ -18,6 +18,15 @@ using System;
 public partial class Kullanıcılar
 {
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Kullanıcılar()
+    {
+
+        this.Kayıtlar = new HashSet<Kayıtlar>();
+
+    }
+
+
     public int kullanici_id { get; set; }
 
     public string kullanici_ad { get; set; }
@@ -31,6 +40,12 @@ public partial class Kullanıcılar
     public string kullanici_tel { get; set; }
 
     public Nullable<double> kullanici_ceza { get; set; }
+
+
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<Kayıtlar> Kayıtlar { get; set; }
 
 }
 

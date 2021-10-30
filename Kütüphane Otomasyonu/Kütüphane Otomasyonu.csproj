@@ -61,26 +61,35 @@
     <Compile Include="GirişPaneli.Designer.cs">
       <DependentUpon>GirişPaneli.cs</DependentUpon>
     </Compile>
-    <Compile Include="KaynakEkle.cs">
+    <Compile Include="Kaynaklar\KaynakEkle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KaynakEkle.Designer.cs">
+    <Compile Include="Kaynaklar\KaynakEkle.Designer.cs">
       <DependentUpon>KaynakEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kaynaklar\KaynakGüncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kaynaklar\KaynakGüncelle.Designer.cs">
+      <DependentUpon>KaynakGüncelle.cs</DependentUpon>
     </Compile>
     <Compile Include="Kaynaklar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="KaynakListele.cs">
+    <Compile Include="Kaynaklar\KaynakListele.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KaynakListele.Designer.cs">
+    <Compile Include="Kaynaklar\KaynakListele.Designer.cs">
       <DependentUpon>KaynakListele.cs</DependentUpon>
     </Compile>
-    <Compile Include="KaynakSil.cs">
+    <Compile Include="Kaynaklar\KaynakSil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KaynakSil.Designer.cs">
+    <Compile Include="Kaynaklar\KaynakSil.Designer.cs">
       <DependentUpon>KaynakSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kayıtlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="KullanıcıEkle.cs" />
     <Compile Include="Kullanıcı\KullanıcıGüncelle.cs">
@@ -132,6 +141,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="İşlemPaneli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,13 +153,16 @@
     <EmbeddedResource Include="GirişPaneli.resx">
       <DependentUpon>GirişPaneli.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KaynakEkle.resx">
+    <EmbeddedResource Include="Kaynaklar\KaynakEkle.resx">
       <DependentUpon>KaynakEkle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KaynakListele.resx">
+    <EmbeddedResource Include="Kaynaklar\KaynakGüncelle.resx">
+      <DependentUpon>KaynakGüncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kaynaklar\KaynakListele.resx">
       <DependentUpon>KaynakListele.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KaynakSil.resx">
+    <EmbeddedResource Include="Kaynaklar\KaynakSil.resx">
       <DependentUpon>KaynakSil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanıcı\KullanıcıGüncelle.resx">
@@ -210,8 +225,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Kaynaklar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

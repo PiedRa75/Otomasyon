@@ -8,6 +8,10 @@
         <EntityTypeShape EntityType="Model.Kullanıcılar" Width="1.5" PointX="2.625" PointY="0.5" />
         <EntityTypeShape EntityType="Model.Personeller" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="Model.Kaynaklar" Width="1.5" PointX="4.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model.Kayıtlar" Width="1.5" PointX="7.125" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="5" />
+        <AssociationConnector Association="Model.FK_Kayıtlar_Kaynaklar" />
+        <AssociationConnector Association="Model.FK_Kayıtlar_Kullanıcılar" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

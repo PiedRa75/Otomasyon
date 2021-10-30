@@ -39,12 +39,14 @@ namespace Kütüphane_Otomasyonu
             this.buttonEkleKullanici = new System.Windows.Forms.Button();
             this.buttonKullanicilar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonOduncVer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Controls.Add(this.buttonOduncVer);
             this.panel1.Controls.Add(this.buttonSilKaynak);
             this.panel1.Controls.Add(this.buttonGüncelleKaynak);
             this.panel1.Controls.Add(this.buttonEkleKaynak);
@@ -83,6 +85,7 @@ namespace Kütüphane_Otomasyonu
             this.buttonGüncelleKaynak.TabIndex = 6;
             this.buttonGüncelleKaynak.Text = "Güncelle";
             this.buttonGüncelleKaynak.UseVisualStyleBackColor = true;
+            this.buttonGüncelleKaynak.Click += new System.EventHandler(this.buttonGüncelleKaynak_Click);
             // 
             // buttonEkleKaynak
             // 
@@ -175,6 +178,19 @@ namespace Kütüphane_Otomasyonu
             this.panel2.Size = new System.Drawing.Size(534, 34);
             this.panel2.TabIndex = 1;
             // 
+            // buttonOduncVer
+            // 
+            this.buttonOduncVer.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonOduncVer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonOduncVer.FlatAppearance.BorderSize = 0;
+            this.buttonOduncVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOduncVer.Location = new System.Drawing.Point(0, 278);
+            this.buttonOduncVer.Name = "buttonOduncVer";
+            this.buttonOduncVer.Size = new System.Drawing.Size(107, 34);
+            this.buttonOduncVer.TabIndex = 8;
+            this.buttonOduncVer.Text = "Ödünç Ver";
+            this.buttonOduncVer.UseVisualStyleBackColor = false;
+            // 
             // İşlem_Paneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,5 +219,6 @@ namespace Kütüphane_Otomasyonu
         private System.Windows.Forms.Button buttonGüncelleKaynak;
         private System.Windows.Forms.Button buttonEkleKaynak;
         private System.Windows.Forms.Button buttonKaynaklar;
+        private System.Windows.Forms.Button buttonOduncVer;
     }
 }

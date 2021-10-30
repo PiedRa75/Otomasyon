@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kayıtlar">
+          <Key>
+            <PropertyRef Name="kayit_id" />
+          </Key>
+          <Property Name="kayit_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+          <Property Name="kitap_id" Type="int" Nullable="false" />
+          <Property Name="alis_tarihi" Type="datetime" Nullable="false" />
+          <Property Name="son_teslim_tarihi" Type="datetime" Nullable="false" />
+          <Property Name="durum" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Kaynaklar">
           <Key>
             <PropertyRef Name="kaynak_id" />
@@ -41,10 +52,54 @@
           <Property Name="personel_kullaniciad" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="personel_sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Kayıtlar_Kaynaklar">
+          <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="1" />
+          <End Role="Kayıtlar" Type="Self.Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kaynaklar">
+              <PropertyRef Name="kaynak_id" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kitap_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayıtlar_Kullanıcılar">
+          <End Role="Kullanıcılar" Type="Self.Kullanıcılar" Multiplicity="1" />
+          <End Role="Kayıtlar" Type="Self.Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanıcılar">
+              <PropertyRef Name="kullanici_id" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Kayıtlar" EntityType="Self.Kayıtlar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kaynaklar" EntityType="Self.Kaynaklar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanıcılar" EntityType="Self.Kullanıcılar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Kayıtlar_Kaynaklar" Association="Self.FK_Kayıtlar_Kaynaklar">
+            <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayıtlar_Kullanıcılar" Association="Self.FK_Kayıtlar_Kullanıcılar">
+            <End Role="Kullanıcılar" EntitySet="Kullanıcılar" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -54,6 +109,16 @@
           <EntitySet Name="Kullanıcılar" EntityType="Model.Kullanıcılar" />
           <EntitySet Name="Personeller" EntityType="Model.Personeller" />
           <EntitySet Name="Kaynaklar" EntityType="Model.Kaynaklar" />
+          <EntitySet Name="Kayıtlar" EntityType="Model.Kayıtlar" />
+          <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+          <AssociationSet Name="FK_Kayıtlar_Kaynaklar" Association="Model.FK_Kayıtlar_Kaynaklar">
+            <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayıtlar_Kullanıcılar" Association="Model.FK_Kayıtlar_Kullanıcılar">
+            <End Role="Kullanıcılar" EntitySet="Kullanıcılar" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Kullanıcılar">
           <Key>
@@ -66,6 +131,7 @@
           <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_ceza" Type="Double" />
+          <NavigationProperty Name="Kayıtlar" Relationship="Model.FK_Kayıtlar_Kullanıcılar" FromRole="Kullanıcılar" ToRole="Kayıtlar" />
         </EntityType>
         <EntityType Name="Personeller">
           <Key>
@@ -90,7 +156,55 @@
           <Property Name="kaynak_yayinci" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="kaynak_sayfasayisi" Type="Int32" />
           <Property Name="kaynak_basimtarihi" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Kayıtlar" Relationship="Model.FK_Kayıtlar_Kaynaklar" FromRole="Kaynaklar" ToRole="Kayıtlar" />
         </EntityType>
+        <EntityType Name="Kayıtlar">
+          <Key>
+            <PropertyRef Name="kayit_id" />
+          </Key>
+          <Property Name="kayit_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+          <Property Name="kitap_id" Type="Int32" Nullable="false" />
+          <Property Name="alis_tarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="son_teslim_tarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="durum" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Kaynaklar" Relationship="Model.FK_Kayıtlar_Kaynaklar" FromRole="Kayıtlar" ToRole="Kaynaklar" />
+          <NavigationProperty Name="Kullanıcılar" Relationship="Model.FK_Kayıtlar_Kullanıcılar" FromRole="Kayıtlar" ToRole="Kullanıcılar" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Kayıtlar_Kaynaklar">
+          <End Type="Model.Kaynaklar" Role="Kaynaklar" Multiplicity="1" />
+          <End Type="Model.Kayıtlar" Role="Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kaynaklar">
+              <PropertyRef Name="kaynak_id" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kitap_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayıtlar_Kullanıcılar">
+          <End Type="Model.Kullanıcılar" Role="Kullanıcılar" Multiplicity="1" />
+          <End Type="Model.Kayıtlar" Role="Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanıcılar">
+              <PropertyRef Name="kullanici_id" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -133,6 +247,29 @@
                 <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
                 <ScalarProperty Name="kaynak_ad" ColumnName="kaynak_ad" />
                 <ScalarProperty Name="kaynak_id" ColumnName="kaynak_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kayıtlar">
+            <EntityTypeMapping TypeName="Model.Kayıtlar">
+              <MappingFragment StoreEntitySet="Kayıtlar">
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="son_teslim_tarihi" ColumnName="son_teslim_tarihi" />
+                <ScalarProperty Name="alis_tarihi" ColumnName="alis_tarihi" />
+                <ScalarProperty Name="kitap_id" ColumnName="kitap_id" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="kayit_id" ColumnName="kayit_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

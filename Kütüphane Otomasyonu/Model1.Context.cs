@@ -38,6 +38,10 @@ public partial class Kütüphane_OtomasyonuEntities : DbContext
 
     public virtual DbSet<Kaynaklar> Kaynaklar { get; set; }
 
+    public virtual DbSet<Kayıtlar> Kayıtlar { get; set; }
+
+    public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+
 }
 
 }

@@ -86,12 +86,12 @@ namespace Kütüphane_Otomasyonu
             {
                 buttonEkleKaynak.Visible = false;
                 buttonGüncelleKaynak.Visible = false;
-                buttonSilKaynak.Visible = false;
-
-                KaynakListele lkaynak = new KaynakListele();
-                lkaynak.MdiParent = this;
-                lkaynak.Show();
+                buttonSilKaynak.Visible = false;        
             }
+
+            KaynakListele lkaynak = new KaynakListele();
+            lkaynak.MdiParent = this;
+            lkaynak.Show();
         }
 
         private void buttonEkleKaynak_Click(object sender, EventArgs e)
@@ -106,6 +106,13 @@ namespace Kütüphane_Otomasyonu
             KaynakSil ksil = new KaynakSil();
             ksil.MdiParent = this;
             ksil.Show();
+        }
+
+        private void buttonGüncelleKaynak_Click(object sender, EventArgs e)
+        {
+            KaynakGüncelle kGüncelle = new KaynakGüncelle();
+            kGüncelle.MdiParent = this;
+            kGüncelle.Show();
         }
     }
 }

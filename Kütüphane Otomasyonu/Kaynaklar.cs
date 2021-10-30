@@ -18,6 +18,15 @@ using System;
 public partial class Kaynaklar
 {
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Kaynaklar()
+    {
+
+        this.Kayıtlar = new HashSet<Kayıtlar>();
+
+    }
+
+
     public int kaynak_id { get; set; }
 
     public string kaynak_ad { get; set; }
@@ -29,6 +38,12 @@ public partial class Kaynaklar
     public Nullable<int> kaynak_sayfasayisi { get; set; }
 
     public Nullable<System.DateTime> kaynak_basimtarihi { get; set; }
+
+
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<Kayıtlar> Kayıtlar { get; set; }
 
 }
 

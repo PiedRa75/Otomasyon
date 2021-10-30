@@ -16,16 +16,13 @@ namespace Kütüphane_Otomasyonu
         {
             InitializeComponent();
         }
-        public void Listele()
-        {
-            Kütüphane_OtomasyonuEntities db = new Kütüphane_OtomasyonuEntities();
-            var kaynak = db.Kaynaklar.ToList();
-            dataGridView1.DataSource = kaynak.ToList();
-        }
-        
+
+         Kütüphane_OtomasyonuEntities db = new Kütüphane_OtomasyonuEntities();
+     
         private void KaynakListele_Load(object sender, EventArgs e)
         {
-            Listele();
+            var kaynaklar = db.Kaynaklar.ToList();
+            dataGridView1.DataSource = kaynaklar.ToList();
         }
     }
 }
