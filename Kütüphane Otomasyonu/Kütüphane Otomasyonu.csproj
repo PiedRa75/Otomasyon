@@ -55,10 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeriAl.cs">
+    <Compile Include="Kayıtlar\GeriAl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeriAl.Designer.cs">
+    <Compile Include="Kayıtlar\GeriAl.Designer.cs">
       <DependentUpon>GeriAl.cs</DependentUpon>
     </Compile>
     <Compile Include="GirişPaneli.cs">
@@ -142,10 +142,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="OduncVer.cs">
+    <Compile Include="Kayıtlar\OduncVer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OduncVer.Designer.cs">
+    <Compile Include="Kayıtlar\OduncVer.Designer.cs">
       <DependentUpon>OduncVer.cs</DependentUpon>
     </Compile>
     <Compile Include="Personeller.cs">
@@ -162,7 +162,7 @@
     <Compile Include="İşlemPaneli.Designer.cs">
       <DependentUpon>İşlemPaneli.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GeriAl.resx">
+    <EmbeddedResource Include="Kayıtlar\GeriAl.resx">
       <DependentUpon>GeriAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GirişPaneli.resx">
@@ -192,7 +192,7 @@
     <EmbeddedResource Include="Kullanıcı\KullanıcıListesi.resx">
       <DependentUpon>KullanıcıListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OduncVer.resx">
+    <EmbeddedResource Include="Kayıtlar\OduncVer.resx">
       <DependentUpon>OduncVer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -243,8 +243,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Kayıtlar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
