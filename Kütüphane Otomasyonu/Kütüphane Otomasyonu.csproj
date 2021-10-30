@@ -76,6 +76,12 @@
     <Compile Include="KaynakListele.Designer.cs">
       <DependentUpon>KaynakListele.cs</DependentUpon>
     </Compile>
+    <Compile Include="KaynakSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KaynakSil.Designer.cs">
+      <DependentUpon>KaynakSil.cs</DependentUpon>
+    </Compile>
     <Compile Include="KullanıcıEkle.cs" />
     <Compile Include="Kullanıcı\KullanıcıGüncelle.cs">
       <SubType>Form</SubType>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KaynakListele.resx">
       <DependentUpon>KaynakListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaynakSil.resx">
+      <DependentUpon>KaynakSil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanıcı\KullanıcıGüncelle.resx">
       <DependentUpon>KullanıcıGüncelle.cs</DependentUpon>

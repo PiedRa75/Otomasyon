@@ -70,6 +70,7 @@ namespace Kütüphane_Otomasyonu
             this.buttonSilKaynak.TabIndex = 7;
             this.buttonSilKaynak.Text = "Sil";
             this.buttonSilKaynak.UseVisualStyleBackColor = true;
+            this.buttonSilKaynak.Click += new System.EventHandler(this.buttonSilKaynak_Click);
             // 
             // buttonGüncelleKaynak
             // 

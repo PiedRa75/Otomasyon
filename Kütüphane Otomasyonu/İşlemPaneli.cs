@@ -100,5 +100,12 @@ namespace Kütüphane_Otomasyonu
             kEkle.MdiParent = this;
             kEkle.Show();
         }
+
+        private void buttonSilKaynak_Click(object sender, EventArgs e)
+        {
+            KaynakSil ksil = new KaynakSil();
+            ksil.MdiParent = this;
+            ksil.Show();
+        }
     }
 }
