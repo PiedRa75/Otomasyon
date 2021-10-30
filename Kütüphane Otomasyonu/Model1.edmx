@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kaynaklar">
+          <Key>
+            <PropertyRef Name="kaynak_id" />
+          </Key>
+          <Property Name="kaynak_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kaynak_ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kaynak_yazar" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_yayinci" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_sayfasayisi" Type="int" />
+          <Property Name="kaynak_basimtarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Kullanıcılar">
+          <Key>
+            <PropertyRef Name="kullanici_id" />
+          </Key>
+          <Property Name="kullanici_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici_ad" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="kullanici_soyad" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="kullanici_tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="kullanici_mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="kullanici_tel" Type="nvarchar" MaxLength="11" />
+          <Property Name="kullanici_ceza" Type="float" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="personel_id" />
+          </Key>
+          <Property Name="personel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personel_ad" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="personel_soyad" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="personel_tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="personel_tel" Type="nvarchar" MaxLength="11" />
+          <Property Name="personel_mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="personel_kullaniciad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="personel_sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Kaynaklar" EntityType="Self.Kaynaklar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanıcılar" EntityType="Self.Kullanıcılar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Kütüphane_OtomasyonuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kullanıcılar" EntityType="Model.Kullanıcılar" />
+          <EntitySet Name="Personeller" EntityType="Model.Personeller" />
+          <EntitySet Name="Kaynaklar" EntityType="Model.Kaynaklar" />
+        </EntityContainer>
+        <EntityType Name="Kullanıcılar">
+          <Key>
+            <PropertyRef Name="kullanici_id" />
+          </Key>
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_ad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_soyad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_tc" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_ceza" Type="Double" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="personel_id" />
+          </Key>
+          <Property Name="personel_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personel_ad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="personel_soyad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="personel_tc" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="personel_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="personel_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="personel_kullaniciad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="personel_sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kaynaklar">
+          <Key>
+            <PropertyRef Name="kaynak_id" />
+          </Key>
+          <Property Name="kaynak_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kaynak_ad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_yayinci" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_sayfasayisi" Type="Int32" />
+          <Property Name="kaynak_basimtarihi" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Kütüphane_OtomasyonuEntities">
+          <EntitySetMapping Name="Kullanıcılar">
+            <EntityTypeMapping TypeName="Model.Kullanıcılar">
+              <MappingFragment StoreEntitySet="Kullanıcılar">
+                <ScalarProperty Name="kullanici_ceza" ColumnName="kullanici_ceza" />
+                <ScalarProperty Name="kullanici_tel" ColumnName="kullanici_tel" />
+                <ScalarProperty Name="kullanici_mail" ColumnName="kullanici_mail" />
+                <ScalarProperty Name="kullanici_tc" ColumnName="kullanici_tc" />
+                <ScalarProperty Name="kullanici_soyad" ColumnName="kullanici_soyad" />
+                <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personeller">
+            <EntityTypeMapping TypeName="Model.Personeller">
+              <MappingFragment StoreEntitySet="Personeller">
+                <ScalarProperty Name="personel_sifre" ColumnName="personel_sifre" />
+                <ScalarProperty Name="personel_kullaniciad" ColumnName="personel_kullaniciad" />
+                <ScalarProperty Name="personel_mail" ColumnName="personel_mail" />
+                <ScalarProperty Name="personel_tel" ColumnName="personel_tel" />
+                <ScalarProperty Name="personel_tc" ColumnName="personel_tc" />
+                <ScalarProperty Name="personel_soyad" ColumnName="personel_soyad" />
+                <ScalarProperty Name="personel_ad" ColumnName="personel_ad" />
+                <ScalarProperty Name="personel_id" ColumnName="personel_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kaynaklar">
+            <EntityTypeMapping TypeName="Model.Kaynaklar">
+              <MappingFragment StoreEntitySet="Kaynaklar">
+                <ScalarProperty Name="kaynak_basimtarihi" ColumnName="kaynak_basimtarihi" />
+                <ScalarProperty Name="kaynak_sayfasayisi" ColumnName="kaynak_sayfasayisi" />
+                <ScalarProperty Name="kaynak_yayinci" ColumnName="kaynak_yayinci" />
+                <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
+                <ScalarProperty Name="kaynak_ad" ColumnName="kaynak_ad" />
+                <ScalarProperty Name="kaynak_id" ColumnName="kaynak_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
