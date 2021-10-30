@@ -31,48 +31,95 @@ namespace Kütüphane_Otomasyonu
             buttonSilKaynak.Visible = false;
         }
 
+        private Kullanıcı_Listesi klistesi;
+
         private void buttonKullanicilar_Click(object sender, EventArgs e)
         {
 
-            if (buttonEkleKullanici.Visible == false) 
+            if (buttonEkleKullanici.Visible == false)
             {
                 buttonEkleKullanici.Visible = true;
                 buttonGüncelleKullanici.Visible = true;
                 buttonSilKullanici.Visible = true;
+
+                klistesi = new Kullanıcı_Listesi();
+                klistesi.MdiParent = this;
+                klistesi.Show();
             }
             else
             {
                 buttonEkleKullanici.Visible = false;
                 buttonGüncelleKullanici.Visible = false;
                 buttonSilKullanici.Visible = false;
+                klistesi.Close();
             }
 
-            Kullanıcı_Listesi klistesi = new Kullanıcı_Listesi();
-            klistesi.MdiParent = this;
-            klistesi.Show();
-
         }
+
+        private Kullanıcı_Ekle ekleform;
+        private bool eklekullanicidurum = false;
 
         private void buttonEkleKullanici_Click(object sender, EventArgs e)
         {
-            Kullanıcı_Ekle ekleform = new Kullanıcı_Ekle();
-            ekleform.MdiParent = this;
-            ekleform.Show();
+
+            if (eklekullanicidurum == false)
+            {
+                ekleform = new Kullanıcı_Ekle();
+                ekleform.MdiParent = this;
+                ekleform.Show();
+                eklekullanicidurum = true;
+            }
+            else
+            {
+                ekleform.Close();
+                eklekullanicidurum = false;
+            }
+
+
         }
+
+        private KullanıcıSil silform;
+        private bool silkullanicidurum = false;
 
         private void buttonSilKullanici_Click(object sender, EventArgs e)
         {
-            KullanıcıSil silform = new KullanıcıSil();
-            silform.MdiParent = this;
-            silform.Show();
+
+            if (silkullanicidurum == false)
+            {
+                silform = new KullanıcıSil();
+                silform.MdiParent = this;
+                silform.Show();
+                silkullanicidurum = true;
+            }
+            else
+            {
+                silform.Close();
+                silkullanicidurum = false;
+            }
         }
+
+        private KullanıcıGüncelle güncelleform;
+        private bool güncellekullanicidurum = false;
 
         private void buttonGüncelleKullanici_Click(object sender, EventArgs e)
         {
-            KullanıcıGüncelle güncelleform = new KullanıcıGüncelle();
-            güncelleform.MdiParent = this;
-            güncelleform.Show();
+
+            if (güncellekullanicidurum == false)
+            {
+                güncelleform = new KullanıcıGüncelle();
+                güncelleform.MdiParent = this;
+                güncelleform.Show();
+                güncellekullanicidurum = true;
+            }
+            else
+            {
+                güncelleform.Close();
+                güncellekullanicidurum = false;
+            }
+
         }
+
+        private KaynakListele lkaynak;
 
         private void buttonKaynaklar_Click(object sender, EventArgs e)
         {
@@ -81,52 +128,120 @@ namespace Kütüphane_Otomasyonu
                 buttonEkleKaynak.Visible = true;
                 buttonGüncelleKaynak.Visible = true;
                 buttonSilKaynak.Visible = true;
+
+                lkaynak = new KaynakListele();
+                lkaynak.MdiParent = this;
+                lkaynak.Show();
             }
             else
             {
                 buttonEkleKaynak.Visible = false;
                 buttonGüncelleKaynak.Visible = false;
-                buttonSilKaynak.Visible = false;        
+                buttonSilKaynak.Visible = false;
+                lkaynak.Close();
             }
 
-            KaynakListele lkaynak = new KaynakListele();
-            lkaynak.MdiParent = this;
-            lkaynak.Show();
+
         }
+
+        private KaynakEkle kEkle;
+        private bool eklekaynakdurum = false;
 
         private void buttonEkleKaynak_Click(object sender, EventArgs e)
         {
-            KaynakEkle kEkle = new KaynakEkle();
-            kEkle.MdiParent = this;
-            kEkle.Show();
+            if (eklekaynakdurum == false)
+            {
+                kEkle = new KaynakEkle();
+                kEkle.MdiParent = this;
+                kEkle.Show();
+                eklekaynakdurum = true;
+            }
+            else
+            {
+                kEkle.Close();
+                eklekaynakdurum = false;
+            }
         }
+
+        private KaynakSil ksil;
+        private bool silkaynakdurum = false;
 
         private void buttonSilKaynak_Click(object sender, EventArgs e)
         {
-            KaynakSil ksil = new KaynakSil();
-            ksil.MdiParent = this;
-            ksil.Show();
+
+            if (silkaynakdurum == false)
+            {
+                ksil = new KaynakSil();
+                ksil.MdiParent = this;
+                ksil.Show();
+                silkaynakdurum = true;
+            }
+            else
+            {
+                ksil.Close();
+                silkaynakdurum = false;
+            }
+
         }
+
+        private KaynakGüncelle kGüncelle;
+        private bool güncellekaynakdurum = false;
 
         private void buttonGüncelleKaynak_Click(object sender, EventArgs e)
         {
-            KaynakGüncelle kGüncelle = new KaynakGüncelle();
-            kGüncelle.MdiParent = this;
-            kGüncelle.Show();
+            if (güncellekaynakdurum == false)
+            {
+                kGüncelle = new KaynakGüncelle();
+                kGüncelle.MdiParent = this;
+                kGüncelle.Show();
+                güncellekaynakdurum = true;
+            }
+            else
+            {
+                kGüncelle.Close();
+                güncellekaynakdurum = false;
+            }
+
         }
+
+        private OduncVer odunc;
+        private bool oduncverme = false;
 
         private void buttonOduncVer_Click(object sender, EventArgs e)
         {
-            OduncVer odunc = new OduncVer();
-            odunc.MdiParent = this;
-            odunc.Show();
+            if (oduncverme == false)
+            {
+                odunc = new OduncVer();
+                odunc.MdiParent = this;
+                odunc.Show();
+                oduncverme = true;
+            }
+            else
+            {
+                odunc.Close();
+                oduncverme = false;
+            }
+
         }
+
+        private GeriAl geri;
+        private bool gerialma = false;
 
         private void buttonGeriAl_Click(object sender, EventArgs e)
         {
-            GeriAl geri = new GeriAl();
-            geri.MdiParent = this;
-            geri.Show();
+            if (gerialma == false)
+            {
+                geri = new GeriAl();
+                geri.MdiParent = this;
+                geri.Show();
+                gerialma = true;
+            }
+            else
+            {
+                geri.Close();
+                gerialma = false;
+            }
+
         }
     }
 }

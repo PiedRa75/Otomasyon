@@ -27,7 +27,6 @@ namespace Kütüphane_Otomasyonu.Kullanıcı
             kullanicilar.kullanici_tc = textBoxTcEkle.Text;
             kullanicilar.kullanici_mail = textBoxMailEkle.Text;
             kullanicilar.kullanici_tel = textBoxTelEkle.Text;
-            kullanicilar.kullanici_ceza = Convert.ToDouble(textBoxCezaEkle.Text);
 
             db.Kullanıcılar.Add(kullanicilar);
             db.SaveChanges();
@@ -38,6 +37,15 @@ namespace Kütüphane_Otomasyonu.Kullanıcı
         {
             var kullanicilar = db.Kullanıcılar.ToList();
             dataGridView1.DataSource = kullanicilar.ToList();
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[1].HeaderText = "Ad";
+            dataGridView1.Columns[2].HeaderText = "Soyad";
+            dataGridView1.Columns[3].HeaderText = "TC";
+            dataGridView1.Columns[4].HeaderText = "Mail";
+            dataGridView1.Columns[5].HeaderText = "Telefon";
         }
 
         private void Kullanıcı_Ekle_Load(object sender, EventArgs e)

@@ -30,13 +30,11 @@ namespace Kütüphane_Otomasyonu
         private void InitializeComponent()
         {
             this.buttonGüncelle = new System.Windows.Forms.Button();
-            this.textBoxCezaEkle = new System.Windows.Forms.TextBox();
             this.textBoxTelEkle = new System.Windows.Forms.TextBox();
             this.textBoxMailEkle = new System.Windows.Forms.TextBox();
             this.textBoxTcEkle = new System.Windows.Forms.TextBox();
             this.textBoxSoyadEkle = new System.Windows.Forms.TextBox();
             this.textBoxAdEkle = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,20 +46,13 @@ namespace Kütüphane_Otomasyonu
             // 
             // buttonGüncelle
             // 
-            this.buttonGüncelle.Location = new System.Drawing.Point(19, 184);
+            this.buttonGüncelle.Location = new System.Drawing.Point(19, 152);
             this.buttonGüncelle.Name = "buttonGüncelle";
             this.buttonGüncelle.Size = new System.Drawing.Size(140, 35);
             this.buttonGüncelle.TabIndex = 25;
-            this.buttonGüncelle.Text = "KAYDET";
+            this.buttonGüncelle.Text = "GÜNCELLE";
             this.buttonGüncelle.UseVisualStyleBackColor = true;
             this.buttonGüncelle.Click += new System.EventHandler(this.buttonGüncelle_Click);
-            // 
-            // textBoxCezaEkle
-            // 
-            this.textBoxCezaEkle.Location = new System.Drawing.Point(59, 141);
-            this.textBoxCezaEkle.Name = "textBoxCezaEkle";
-            this.textBoxCezaEkle.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCezaEkle.TabIndex = 24;
             // 
             // textBoxTelEkle
             // 
@@ -97,15 +88,6 @@ namespace Kütüphane_Otomasyonu
             this.textBoxAdEkle.Name = "textBoxAdEkle";
             this.textBoxAdEkle.Size = new System.Drawing.Size(100, 20);
             this.textBoxAdEkle.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Ceza :";
             // 
             // label5
             // 
@@ -159,7 +141,7 @@ namespace Kütüphane_Otomasyonu
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(532, 340);
             this.dataGridView1.TabIndex = 26;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // KullanıcıGüncelle
             // 
@@ -168,13 +150,11 @@ namespace Kütüphane_Otomasyonu
             this.ClientSize = new System.Drawing.Size(726, 360);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonGüncelle);
-            this.Controls.Add(this.textBoxCezaEkle);
             this.Controls.Add(this.textBoxTelEkle);
             this.Controls.Add(this.textBoxMailEkle);
             this.Controls.Add(this.textBoxTcEkle);
             this.Controls.Add(this.textBoxSoyadEkle);
             this.Controls.Add(this.textBoxAdEkle);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -192,13 +172,11 @@ namespace Kütüphane_Otomasyonu
         #endregion
 
         private System.Windows.Forms.Button buttonGüncelle;
-        private System.Windows.Forms.TextBox textBoxCezaEkle;
         private System.Windows.Forms.TextBox textBoxTelEkle;
         private System.Windows.Forms.TextBox textBoxMailEkle;
         private System.Windows.Forms.TextBox textBoxTcEkle;
         private System.Windows.Forms.TextBox textBoxSoyadEkle;
         private System.Windows.Forms.TextBox textBoxAdEkle;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

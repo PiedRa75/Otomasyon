@@ -21,6 +21,15 @@ namespace Kütüphane_Otomasyonu
         {
             var kullanicilar = db.Kullanıcılar.ToList();
             dataGridView1.DataSource = kullanicilar.ToList();
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[1].HeaderText = "Ad";
+            dataGridView1.Columns[2].HeaderText = "Soyad";
+            dataGridView1.Columns[3].HeaderText = "TC";
+            dataGridView1.Columns[4].HeaderText = "Mail";
+            dataGridView1.Columns[5].HeaderText = "Telefon";
         }
 
         private void KullanıcıSil_Load(object sender, EventArgs e)

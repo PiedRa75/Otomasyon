@@ -23,6 +23,15 @@ namespace Kütüphane_Otomasyonu
         {
             var kaynaklar = db.Kaynaklar.ToList();
             dataGridView1.DataSource = kaynaklar.ToList();
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[1].HeaderText = "Kitap Adı";
+            dataGridView1.Columns[2].HeaderText = "Yazar";
+            dataGridView1.Columns[3].HeaderText = "Yayıncı";
+            dataGridView1.Columns[4].HeaderText = "Sayfa Sayısı";
+            dataGridView1.Columns[5].HeaderText = "Basım Tarihi";
         }
     }
 }

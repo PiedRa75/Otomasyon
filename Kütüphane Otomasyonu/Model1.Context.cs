@@ -32,8 +32,6 @@ public partial class Kütüphane_OtomasyonuEntities : DbContext
     }
 
 
-    public virtual DbSet<Kullanıcılar> Kullanıcılar { get; set; }
-
     public virtual DbSet<Personeller> Personeller { get; set; }
 
     public virtual DbSet<Kaynaklar> Kaynaklar { get; set; }
@@ -41,6 +39,8 @@ public partial class Kütüphane_OtomasyonuEntities : DbContext
     public virtual DbSet<Kayıtlar> Kayıtlar { get; set; }
 
     public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+
+    public virtual DbSet<Kullanıcılar> Kullanıcılar { get; set; }
 
 }
 

@@ -162,6 +162,7 @@ namespace Kütüphane_Otomasyonu
             this.Controls.Add(this.dataGridView1);
             this.Name = "KaynakEkle";
             this.Text = "KaynakEkle";
+            this.Load += new System.EventHandler(this.KaynakEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

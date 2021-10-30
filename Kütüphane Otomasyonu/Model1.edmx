@@ -37,7 +37,6 @@
           <Property Name="kullanici_tc" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="kullanici_mail" Type="nvarchar" MaxLength="50" />
           <Property Name="kullanici_tel" Type="nvarchar" MaxLength="11" />
-          <Property Name="kullanici_ceza" Type="float" />
         </EntityType>
         <EntityType Name="Personeller">
           <Key>
@@ -106,7 +105,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Kütüphane_OtomasyonuEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Kullanıcılar" EntityType="Model.Kullanıcılar" />
           <EntitySet Name="Personeller" EntityType="Model.Personeller" />
           <EntitySet Name="Kaynaklar" EntityType="Model.Kaynaklar" />
           <EntitySet Name="Kayıtlar" EntityType="Model.Kayıtlar" />
@@ -115,24 +113,12 @@
             <End Role="Kaynaklar" EntitySet="Kaynaklar" />
             <End Role="Kayıtlar" EntitySet="Kayıtlar" />
           </AssociationSet>
+          <EntitySet Name="Kullanıcılar" EntityType="Model.Kullanıcılar" />
           <AssociationSet Name="FK_Kayıtlar_Kullanıcılar" Association="Model.FK_Kayıtlar_Kullanıcılar">
             <End Role="Kullanıcılar" EntitySet="Kullanıcılar" />
             <End Role="Kayıtlar" EntitySet="Kayıtlar" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Kullanıcılar">
-          <Key>
-            <PropertyRef Name="kullanici_id" />
-          </Key>
-          <Property Name="kullanici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="kullanici_ad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="kullanici_soyad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="kullanici_tc" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="kullanici_ceza" Type="Double" />
-          <NavigationProperty Name="Kayıtlar" Relationship="Model.FK_Kayıtlar_Kullanıcılar" FromRole="Kullanıcılar" ToRole="Kayıtlar" />
-        </EntityType>
         <EntityType Name="Personeller">
           <Key>
             <PropertyRef Name="personel_id" />
@@ -193,6 +179,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Kullanıcılar">
+          <Key>
+            <PropertyRef Name="kullanici_id" />
+          </Key>
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_ad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_soyad" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_tc" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kayıtlar" Relationship="Model.FK_Kayıtlar_Kullanıcılar" FromRole="Kullanıcılar" ToRole="Kayıtlar" />
+        </EntityType>
         <Association Name="FK_Kayıtlar_Kullanıcılar">
           <End Type="Model.Kullanıcılar" Role="Kullanıcılar" Multiplicity="1" />
           <End Type="Model.Kayıtlar" Role="Kayıtlar" Multiplicity="*" />
@@ -211,19 +209,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Kütüphane_OtomasyonuEntities">
-          <EntitySetMapping Name="Kullanıcılar">
-            <EntityTypeMapping TypeName="Model.Kullanıcılar">
-              <MappingFragment StoreEntitySet="Kullanıcılar">
-                <ScalarProperty Name="kullanici_ceza" ColumnName="kullanici_ceza" />
-                <ScalarProperty Name="kullanici_tel" ColumnName="kullanici_tel" />
-                <ScalarProperty Name="kullanici_mail" ColumnName="kullanici_mail" />
-                <ScalarProperty Name="kullanici_tc" ColumnName="kullanici_tc" />
-                <ScalarProperty Name="kullanici_soyad" ColumnName="kullanici_soyad" />
-                <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
-                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Personeller">
             <EntityTypeMapping TypeName="Model.Personeller">
               <MappingFragment StoreEntitySet="Personeller">
@@ -270,6 +255,18 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanıcılar">
+            <EntityTypeMapping TypeName="Model.Kullanıcılar">
+              <MappingFragment StoreEntitySet="Kullanıcılar">
+                <ScalarProperty Name="kullanici_tel" ColumnName="kullanici_tel" />
+                <ScalarProperty Name="kullanici_mail" ColumnName="kullanici_mail" />
+                <ScalarProperty Name="kullanici_tc" ColumnName="kullanici_tc" />
+                <ScalarProperty Name="kullanici_soyad" ColumnName="kullanici_soyad" />
+                <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

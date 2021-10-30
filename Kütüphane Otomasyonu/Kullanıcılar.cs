@@ -39,8 +39,6 @@ public partial class Kullanıcılar
 
     public string kullanici_tel { get; set; }
 
-    public Nullable<double> kullanici_ceza { get; set; }
-
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

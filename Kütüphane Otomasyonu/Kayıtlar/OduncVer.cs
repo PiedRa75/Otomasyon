@@ -35,6 +35,15 @@ namespace Kütüphane_Otomasyonu
             dataGridView1.Columns[3].HeaderText = "Alış Tarihi";
             dataGridView1.Columns[4].HeaderText = "Son Teslim Tarihi";
             dataGridView1.Columns[5].HeaderText = "Teslim Durumu";
+
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[6].Visible = false;
+
+            dataGridView2.Columns[1].HeaderText = "Kitap Adı";
+            dataGridView2.Columns[2].HeaderText = "Yazar";
+            dataGridView2.Columns[3].HeaderText = "Yayıncı";
+            dataGridView2.Columns[4].HeaderText = "Sayfa Sayısı";
+            dataGridView2.Columns[5].HeaderText = "Basım Tarihi";
         }
 
         private void buttonBul_Click(object sender, EventArgs e)

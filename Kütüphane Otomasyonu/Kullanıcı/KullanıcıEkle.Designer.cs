@@ -34,13 +34,11 @@ namespace Kütüphane_Otomasyonu.Kullanıcı
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBoxAdEkle = new System.Windows.Forms.TextBox();
             this.textBoxSoyadEkle = new System.Windows.Forms.TextBox();
             this.textBoxTcEkle = new System.Windows.Forms.TextBox();
             this.textBoxMailEkle = new System.Windows.Forms.TextBox();
             this.textBoxTelEkle = new System.Windows.Forms.TextBox();
-            this.textBoxCezaEkle = new System.Windows.Forms.TextBox();
             this.buttonEkle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -91,15 +89,6 @@ namespace Kütüphane_Otomasyonu.Kullanıcı
             this.label5.TabIndex = 4;
             this.label5.Text = "Telefon :";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Ceza :";
-            // 
             // textBoxAdEkle
             // 
             this.textBoxAdEkle.Location = new System.Drawing.Point(59, 9);
@@ -135,16 +124,9 @@ namespace Kütüphane_Otomasyonu.Kullanıcı
             this.textBoxTelEkle.Size = new System.Drawing.Size(100, 20);
             this.textBoxTelEkle.TabIndex = 10;
             // 
-            // textBoxCezaEkle
-            // 
-            this.textBoxCezaEkle.Location = new System.Drawing.Point(59, 138);
-            this.textBoxCezaEkle.Name = "textBoxCezaEkle";
-            this.textBoxCezaEkle.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCezaEkle.TabIndex = 11;
-            // 
             // buttonEkle
             // 
-            this.buttonEkle.Location = new System.Drawing.Point(19, 181);
+            this.buttonEkle.Location = new System.Drawing.Point(19, 154);
             this.buttonEkle.Name = "buttonEkle";
             this.buttonEkle.Size = new System.Drawing.Size(140, 35);
             this.buttonEkle.TabIndex = 12;
@@ -168,13 +150,11 @@ namespace Kütüphane_Otomasyonu.Kullanıcı
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonEkle);
-            this.Controls.Add(this.textBoxCezaEkle);
             this.Controls.Add(this.textBoxTelEkle);
             this.Controls.Add(this.textBoxMailEkle);
             this.Controls.Add(this.textBoxTcEkle);
             this.Controls.Add(this.textBoxSoyadEkle);
             this.Controls.Add(this.textBoxAdEkle);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -196,13 +176,11 @@ namespace Kütüphane_Otomasyonu.Kullanıcı
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxAdEkle;
         private System.Windows.Forms.TextBox textBoxSoyadEkle;
         private System.Windows.Forms.TextBox textBoxTcEkle;
         private System.Windows.Forms.TextBox textBoxMailEkle;
         private System.Windows.Forms.TextBox textBoxTelEkle;
-        private System.Windows.Forms.TextBox textBoxCezaEkle;
         private System.Windows.Forms.Button buttonEkle;
         private System.Windows.Forms.DataGridView dataGridView1;
     }

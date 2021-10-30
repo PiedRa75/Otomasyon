@@ -20,8 +20,18 @@ namespace Kütüphane_Otomasyonu
         public void Listele()
         {
             Kütüphane_OtomasyonuEntities db = new Kütüphane_OtomasyonuEntities();
+
             var kullanicilar = db.Kullanıcılar.ToList();
             dataGridView1.DataSource = kullanicilar.ToList();
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[1].HeaderText = "Ad";
+            dataGridView1.Columns[2].HeaderText = "Soyad";
+            dataGridView1.Columns[3].HeaderText = "TC";
+            dataGridView1.Columns[4].HeaderText = "Mail";
+            dataGridView1.Columns[5].HeaderText = "Telefon";
         }
 
         private void Kullanıcı_Listesi_Load(object sender, EventArgs e)
