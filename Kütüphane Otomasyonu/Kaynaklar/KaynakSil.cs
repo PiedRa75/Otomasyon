@@ -35,13 +35,23 @@ namespace Kütüphane_Otomasyonu
 
         private void buttonSilKaynak_Click(object sender, EventArgs e)
         {
-            int secilenİd = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
-            var silinenkaynak = db.Kaynaklar.Where(x => x.kaynak_id == secilenİd).FirstOrDefault();
-            db.Kaynaklar.Remove(silinenkaynak);
-            db.SaveChanges();
+            DialogResult sorsil = MessageBox.Show("Bu öğe kalıcı olarak silinsin mi ?",
+            "Silme İşlemi", MessageBoxButtons.YesNo);
 
-            var kaynaklar = db.Kaynaklar.ToList();
-            dataGridView1.DataSource = kaynaklar.ToList();
+            if (sorsil == DialogResult.Yes)
+            {
+                int secilenİd = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
+                var silinenkaynak = db.Kaynaklar.Where(x => x.kaynak_id == secilenİd).FirstOrDefault();
+                db.Kaynaklar.Remove(silinenkaynak);
+                db.SaveChanges();
+
+                var kaynaklar = db.Kaynaklar.ToList();
+                dataGridView1.DataSource = kaynaklar.ToList();
+
+                MessageBox.Show("Silme işlemi başarılı");
+            }
+
+
         }
     }
 }
