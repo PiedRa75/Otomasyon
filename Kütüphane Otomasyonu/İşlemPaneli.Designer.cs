@@ -30,6 +30,8 @@ namespace Kütüphane_Otomasyonu
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonGeriAl = new System.Windows.Forms.Button();
+            this.buttonOduncVer = new System.Windows.Forms.Button();
             this.buttonSilKaynak = new System.Windows.Forms.Button();
             this.buttonGüncelleKaynak = new System.Windows.Forms.Button();
             this.buttonEkleKaynak = new System.Windows.Forms.Button();
@@ -38,9 +40,6 @@ namespace Kütüphane_Otomasyonu
             this.buttonGüncelleKullanici = new System.Windows.Forms.Button();
             this.buttonEkleKullanici = new System.Windows.Forms.Button();
             this.buttonKullanicilar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonOduncVer = new System.Windows.Forms.Button();
-            this.buttonGeriAl = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +61,34 @@ namespace Kütüphane_Otomasyonu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(107, 487);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonGeriAl
+            // 
+            this.buttonGeriAl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonGeriAl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGeriAl.FlatAppearance.BorderSize = 0;
+            this.buttonGeriAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGeriAl.Location = new System.Drawing.Point(0, 312);
+            this.buttonGeriAl.Name = "buttonGeriAl";
+            this.buttonGeriAl.Size = new System.Drawing.Size(107, 34);
+            this.buttonGeriAl.TabIndex = 9;
+            this.buttonGeriAl.Text = "Geri Al";
+            this.buttonGeriAl.UseVisualStyleBackColor = false;
+            this.buttonGeriAl.Click += new System.EventHandler(this.buttonGeriAl_Click);
+            // 
+            // buttonOduncVer
+            // 
+            this.buttonOduncVer.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonOduncVer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonOduncVer.FlatAppearance.BorderSize = 0;
+            this.buttonOduncVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOduncVer.Location = new System.Drawing.Point(0, 278);
+            this.buttonOduncVer.Name = "buttonOduncVer";
+            this.buttonOduncVer.Size = new System.Drawing.Size(107, 34);
+            this.buttonOduncVer.TabIndex = 8;
+            this.buttonOduncVer.Text = "Ödünç Ver";
+            this.buttonOduncVer.UseVisualStyleBackColor = false;
+            this.buttonOduncVer.Click += new System.EventHandler(this.buttonOduncVer_Click);
             // 
             // buttonSilKaynak
             // 
@@ -171,49 +198,11 @@ namespace Kütüphane_Otomasyonu
             this.buttonKullanicilar.UseVisualStyleBackColor = false;
             this.buttonKullanicilar.Click += new System.EventHandler(this.buttonKullanicilar_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(107, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(643, 34);
-            this.panel2.TabIndex = 1;
-            // 
-            // buttonOduncVer
-            // 
-            this.buttonOduncVer.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonOduncVer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonOduncVer.FlatAppearance.BorderSize = 0;
-            this.buttonOduncVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOduncVer.Location = new System.Drawing.Point(0, 278);
-            this.buttonOduncVer.Name = "buttonOduncVer";
-            this.buttonOduncVer.Size = new System.Drawing.Size(107, 34);
-            this.buttonOduncVer.TabIndex = 8;
-            this.buttonOduncVer.Text = "Ödünç Ver";
-            this.buttonOduncVer.UseVisualStyleBackColor = false;
-            this.buttonOduncVer.Click += new System.EventHandler(this.buttonOduncVer_Click);
-            // 
-            // buttonGeriAl
-            // 
-            this.buttonGeriAl.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonGeriAl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonGeriAl.FlatAppearance.BorderSize = 0;
-            this.buttonGeriAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGeriAl.Location = new System.Drawing.Point(0, 312);
-            this.buttonGeriAl.Name = "buttonGeriAl";
-            this.buttonGeriAl.Size = new System.Drawing.Size(107, 34);
-            this.buttonGeriAl.TabIndex = 9;
-            this.buttonGeriAl.Text = "Geri Al";
-            this.buttonGeriAl.UseVisualStyleBackColor = false;
-            this.buttonGeriAl.Click += new System.EventHandler(this.buttonGeriAl_Click);
-            // 
             // İşlem_Paneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 487);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Name = "İşlem_Paneli";
@@ -231,7 +220,6 @@ namespace Kütüphane_Otomasyonu
         private System.Windows.Forms.Button buttonGüncelleKullanici;
         private System.Windows.Forms.Button buttonEkleKullanici;
         private System.Windows.Forms.Button buttonKullanicilar;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonSilKaynak;
         private System.Windows.Forms.Button buttonGüncelleKaynak;
         private System.Windows.Forms.Button buttonEkleKaynak;
