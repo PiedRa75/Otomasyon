@@ -40,12 +40,14 @@ namespace Kütüphane_Otomasyonu
             this.buttonKullanicilar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonOduncVer = new System.Windows.Forms.Button();
+            this.buttonGeriAl = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Controls.Add(this.buttonGeriAl);
             this.panel1.Controls.Add(this.buttonOduncVer);
             this.panel1.Controls.Add(this.buttonSilKaynak);
             this.panel1.Controls.Add(this.buttonGüncelleKaynak);
@@ -58,7 +60,7 @@ namespace Kütüphane_Otomasyonu
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(107, 370);
+            this.panel1.Size = new System.Drawing.Size(107, 487);
             this.panel1.TabIndex = 0;
             // 
             // buttonSilKaynak
@@ -175,7 +177,7 @@ namespace Kütüphane_Otomasyonu
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(107, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 34);
+            this.panel2.Size = new System.Drawing.Size(643, 34);
             this.panel2.TabIndex = 1;
             // 
             // buttonOduncVer
@@ -190,12 +192,27 @@ namespace Kütüphane_Otomasyonu
             this.buttonOduncVer.TabIndex = 8;
             this.buttonOduncVer.Text = "Ödünç Ver";
             this.buttonOduncVer.UseVisualStyleBackColor = false;
+            this.buttonOduncVer.Click += new System.EventHandler(this.buttonOduncVer_Click);
+            // 
+            // buttonGeriAl
+            // 
+            this.buttonGeriAl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonGeriAl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGeriAl.FlatAppearance.BorderSize = 0;
+            this.buttonGeriAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGeriAl.Location = new System.Drawing.Point(0, 312);
+            this.buttonGeriAl.Name = "buttonGeriAl";
+            this.buttonGeriAl.Size = new System.Drawing.Size(107, 34);
+            this.buttonGeriAl.TabIndex = 9;
+            this.buttonGeriAl.Text = "Geri Al";
+            this.buttonGeriAl.UseVisualStyleBackColor = false;
+            this.buttonGeriAl.Click += new System.EventHandler(this.buttonGeriAl_Click);
             // 
             // İşlem_Paneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 370);
+            this.ClientSize = new System.Drawing.Size(750, 487);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -220,5 +237,6 @@ namespace Kütüphane_Otomasyonu
         private System.Windows.Forms.Button buttonEkleKaynak;
         private System.Windows.Forms.Button buttonKaynaklar;
         private System.Windows.Forms.Button buttonOduncVer;
+        private System.Windows.Forms.Button buttonGeriAl;
     }
 }

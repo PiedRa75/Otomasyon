@@ -114,5 +114,19 @@ namespace Kütüphane_Otomasyonu
             kGüncelle.MdiParent = this;
             kGüncelle.Show();
         }
+
+        private void buttonOduncVer_Click(object sender, EventArgs e)
+        {
+            OduncVer odunc = new OduncVer();
+            odunc.MdiParent = this;
+            odunc.Show();
+        }
+
+        private void buttonGeriAl_Click(object sender, EventArgs e)
+        {
+            GeriAl geri = new GeriAl();
+            geri.MdiParent = this;
+            geri.Show();
+        }
     }
 }
