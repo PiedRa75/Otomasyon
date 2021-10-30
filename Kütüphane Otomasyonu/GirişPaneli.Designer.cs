@@ -29,23 +29,14 @@ namespace Kütüphane_Otomasyonu
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxAd = new System.Windows.Forms.TextBox();
             this.textBoxSifre = new System.Windows.Forms.TextBox();
             this.buttonGiris = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(32, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "GİRİŞ PANELİ";
             // 
             // label2
             // 
@@ -91,32 +82,43 @@ namespace Kütüphane_Otomasyonu
             this.buttonGiris.UseVisualStyleBackColor = true;
             this.buttonGiris.Click += new System.EventHandler(this.buttonGiris_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Kütüphane_Otomasyonu.Properties.Resources.icons8_users_64;
+            this.pictureBox1.Location = new System.Drawing.Point(73, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(203, 261);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonGiris);
             this.Controls.Add(this.textBoxSifre);
             this.Controls.Add(this.textBoxAd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxAd;
         private System.Windows.Forms.TextBox textBoxSifre;
         private System.Windows.Forms.Button buttonGiris;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

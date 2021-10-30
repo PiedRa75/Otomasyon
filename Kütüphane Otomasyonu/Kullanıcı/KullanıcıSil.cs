@@ -34,16 +34,24 @@ namespace Kütüphane_Otomasyonu
 
         private void KullanıcıSil_Load(object sender, EventArgs e)
         {
-            Listele(); 
+            Listele();
         }
 
         private void buttonKullaniciSil_Click(object sender, EventArgs e)
         {
-            int secilenId = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
-            var kullanici = db.Kullanıcılar.Where(x => x.kullanici_id == secilenId).FirstOrDefault();
-            db.Kullanıcılar.Remove(kullanici);
-            db.SaveChanges();
-            Listele();
+            DialogResult sorsil = MessageBox.Show("Bu öğe kalıcı olarak silinsin mi ?",
+            "Silme İşlemi", MessageBoxButtons.YesNo);
+
+            if (sorsil == DialogResult.Yes)
+            {
+                int secilenId = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
+                var kullanici = db.Kullanıcılar.Where(x => x.kullanici_id == secilenId).FirstOrDefault();
+                db.Kullanıcılar.Remove(kullanici);
+                db.SaveChanges();
+                Listele();
+                MessageBox.Show("Silme işlemi başarılı");
+            }
+
         }
     }
 }
