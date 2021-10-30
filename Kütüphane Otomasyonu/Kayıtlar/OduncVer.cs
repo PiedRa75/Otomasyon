@@ -21,24 +21,23 @@ namespace Kütüphane_Otomasyonu
 
         private void OduncVer_Load(object sender, EventArgs e)
         {
-            var kayitliste = db.Kayıtlar.ToList();
+
+            var kayitliste = from kayit in db.Kayıtlar 
+            select new { kayit.Kullanıcılar.kullanici_id, kayit.Kullanıcılar.kullanici_ad, kayit.Kaynaklar.kaynak_ad, kayit.alis_tarihi, kayit.son_teslim_tarihi, kayit.durum};
             dataGridView1.DataSource = kayitliste.ToList();
 
-            var kaynakliste = db.Kaynaklar.ToList();
+            var kaynakliste = from kayit in db.Kayıtlar
+            select new { kayit.Kaynaklar.kaynak_id ,kayit.Kaynaklar.kaynak_ad, kayit.Kaynaklar.kaynak_yazar, kayit.Kaynaklar.kaynak_yayinci, kayit.Kaynaklar.kaynak_sayfasayisi, kayit.Kaynaklar.kaynak_basimtarihi};
             dataGridView2.DataSource = kaynakliste.ToList();
 
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
-
+            dataGridView1.Columns[0].HeaderText = "Kullanıcı ID";
             dataGridView1.Columns[1].HeaderText = "Kullanıcı";
             dataGridView1.Columns[2].HeaderText = "Kaynak Adı";
             dataGridView1.Columns[3].HeaderText = "Alış Tarihi";
             dataGridView1.Columns[4].HeaderText = "Son Teslim Tarihi";
             dataGridView1.Columns[5].HeaderText = "Teslim Durumu";
 
-            dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[6].Visible = false;
-
+            dataGridView2.Columns[0].HeaderText = "Kitap ID";
             dataGridView2.Columns[1].HeaderText = "Kitap Adı";
             dataGridView2.Columns[2].HeaderText = "Yazar";
             dataGridView2.Columns[3].HeaderText = "Yayıncı";
@@ -86,8 +85,14 @@ namespace Kütüphane_Otomasyonu
             db.Kayıtlar.Add(yeniKayit);
             db.SaveChanges();
 
-            var kayitliste = db.Kayıtlar.ToList();
+
+            var kayitliste = from kayit in db.Kayıtlar
+            select new { kayit.Kullanıcılar.kullanici_ad, kayit.Kaynaklar.kaynak_ad, kayit.alis_tarihi, kayit.son_teslim_tarihi, kayit.durum };
             dataGridView1.DataSource = kayitliste.ToList();
+
+            var kaynakliste = from kayit in db.Kayıtlar
+            select new { kayit.Kaynaklar.kaynak_id, kayit.Kaynaklar.kaynak_ad, kayit.Kaynaklar.kaynak_yazar, kayit.Kaynaklar.kaynak_yayinci, kayit.Kaynaklar.kaynak_sayfasayisi, kayit.Kaynaklar.kaynak_basimtarihi };
+            dataGridView2.DataSource = kaynakliste.ToList();
         }
     }
 }

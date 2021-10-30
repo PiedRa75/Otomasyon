@@ -23,6 +23,16 @@ namespace Kütüphane_Otomasyonu
         {
             var kayitlar = db.Kayıtlar.Where(x => x.durum == false).ToList();
             dataGridView1.DataSource = kayitlar.ToList();
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+
+            dataGridView1.Columns[1].HeaderText = "Kullanıcı ID";
+            dataGridView1.Columns[2].HeaderText = "Kitap ID";
+            dataGridView1.Columns[3].HeaderText = "Alış Tarihi";
+            dataGridView1.Columns[4].HeaderText = "Son Teslim Tarihi";
+            dataGridView1.Columns[5].HeaderText = "Teslim Durumu";
         }
 
         private void buttonGeriAl_Click(object sender, EventArgs e)
