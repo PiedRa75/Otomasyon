@@ -29,6 +29,7 @@ namespace Kütüphane_Otomasyonu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(İşlem_Paneli));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonGeriAl = new System.Windows.Forms.Button();
             this.buttonOduncVer = new System.Windows.Forms.Button();
@@ -243,6 +244,7 @@ namespace Kütüphane_Otomasyonu
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(793, 566);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "İşlem_Paneli";
             this.Text = "İşlem_Paneli";
