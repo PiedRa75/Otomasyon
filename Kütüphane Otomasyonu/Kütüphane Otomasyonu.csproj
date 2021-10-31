@@ -240,6 +240,21 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\kadı.png" />
+    <None Include="Resources\şifre.png" />
+    <None Include="Resources\kilit.png" />
+    <None Include="Resources\kaynaklar.png" />
+    <None Include="Resources\gerial.png" />
+    <None Include="Resources\ödünçver.png" />
+    <None Include="Resources\kaynaksil.png" />
+    <None Include="Resources\kaynakgüncelle.png" />
+    <None Include="Resources\kullanıcılar.png" />
+    <None Include="Resources\kullanıcısil.png" />
+    <None Include="Resources\kullanıcıgüncelle.png" />
+    <None Include="Resources\kaynakekle.png" />
+    <None Include="Resources\icons8-update-user-16.png" />
+    <None Include="Resources\icons8-add-user-male-48.png" />
+    <None Include="Resources\png-clipart-bookcase-shelf-library-wood-bookshelf-s-furniture-text.png" />
     <None Include="Resources\icons8-users-64.png" />
   </ItemGroup>
   <ItemGroup>

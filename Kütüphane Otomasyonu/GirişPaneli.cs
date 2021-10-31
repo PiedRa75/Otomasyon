@@ -36,10 +36,19 @@ namespace Kütüphane_Otomasyonu
                 İşlem_Paneli panel = new İşlem_Paneli();
                 panel.Show();
                 this.Hide();
-            }
+            } 
 
-            
+        }
 
+        private void textBoxAd_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxAd.Clear();
+        }
+
+        private void textBoxSifre_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxSifre.Clear();
+            textBoxSifre.PasswordChar = '*';
         }
     }
 }
