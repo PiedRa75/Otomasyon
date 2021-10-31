@@ -100,7 +100,7 @@ namespace Kütüphane_Otomasyonu
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Kütüphane_Otomasyonu.Properties.Resources.kilit;
-            this.pictureBox1.Location = new System.Drawing.Point(66, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(63, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(72, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
