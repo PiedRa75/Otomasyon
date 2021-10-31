@@ -37,26 +37,30 @@ namespace Kütüphane_Otomasyonu
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 68);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 95);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(704, 340);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonKullaniciSil
             // 
-            this.buttonKullaniciSil.Location = new System.Drawing.Point(12, 12);
+            this.buttonKullaniciSil.BackColor = System.Drawing.Color.Red;
+            this.buttonKullaniciSil.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonKullaniciSil.ForeColor = System.Drawing.Color.White;
+            this.buttonKullaniciSil.Location = new System.Drawing.Point(32, 12);
             this.buttonKullaniciSil.Name = "buttonKullaniciSil";
-            this.buttonKullaniciSil.Size = new System.Drawing.Size(776, 50);
+            this.buttonKullaniciSil.Size = new System.Drawing.Size(704, 60);
             this.buttonKullaniciSil.TabIndex = 1;
             this.buttonKullaniciSil.Text = "SİL";
-            this.buttonKullaniciSil.UseVisualStyleBackColor = true;
+            this.buttonKullaniciSil.UseVisualStyleBackColor = false;
             this.buttonKullaniciSil.Click += new System.EventHandler(this.buttonKullaniciSil_Click);
             // 
             // KullanıcıSil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ClientSize = new System.Drawing.Size(759, 447);
             this.Controls.Add(this.buttonKullaniciSil);
             this.Controls.Add(this.dataGridView1);
             this.Name = "KullanıcıSil";

@@ -246,6 +246,7 @@ namespace Kütüphane_Otomasyonu
             this.IsMdiContainer = true;
             this.Name = "İşlem_Paneli";
             this.Text = "İşlem_Paneli";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.İşlem_Paneli_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
