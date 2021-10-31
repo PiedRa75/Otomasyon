@@ -51,6 +51,7 @@ namespace Kütüphane_Otomasyonu
             this.Controls.Add(this.dataGridView1);
             this.Name = "KaynakListele";
             this.Text = "KaynakListele";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.KaynakListele_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

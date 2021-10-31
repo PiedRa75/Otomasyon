@@ -43,7 +43,7 @@ namespace Kütüphane_Otomasyonu
             // 
             // textBoxAd
             // 
-            this.textBoxAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBoxAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBoxAd.Location = new System.Drawing.Point(53, 89);
             this.textBoxAd.Multiline = true;
             this.textBoxAd.Name = "textBoxAd";
@@ -54,7 +54,7 @@ namespace Kütüphane_Otomasyonu
             // 
             // textBoxSifre
             // 
-            this.textBoxSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBoxSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBoxSifre.Location = new System.Drawing.Point(53, 138);
             this.textBoxSifre.Multiline = true;
             this.textBoxSifre.Name = "textBoxSifre";

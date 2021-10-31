@@ -26,8 +26,7 @@ namespace Kütüphane_Otomasyonu
             select new { kayit.Kullanıcılar.kullanici_id, kayit.Kullanıcılar.kullanici_ad, kayit.Kaynaklar.kaynak_ad, kayit.alis_tarihi, kayit.son_teslim_tarihi, kayit.durum};
             dataGridView1.DataSource = kayitliste.ToList();
 
-            var kaynakliste = from kayit in db.Kayıtlar
-            select new { kayit.Kaynaklar.kaynak_id ,kayit.Kaynaklar.kaynak_ad, kayit.Kaynaklar.kaynak_yazar, kayit.Kaynaklar.kaynak_yayinci, kayit.Kaynaklar.kaynak_sayfasayisi, kayit.Kaynaklar.kaynak_basimtarihi};
+            var kaynakliste = db.Kaynaklar.ToList();
             dataGridView2.DataSource = kaynakliste.ToList();
 
             dataGridView1.Columns[0].HeaderText = "Kullanıcı ID";
@@ -52,7 +51,7 @@ namespace Kütüphane_Otomasyonu
 
             if(kullaniciBul != null)
             { 
-                label2.Text = kullaniciBul.kullanici_ad + "" + kullaniciBul.kullanici_soyad;
+                label2.Text = kullaniciBul.kullanici_ad + " " + kullaniciBul.kullanici_soyad;
             }
             else
             {
