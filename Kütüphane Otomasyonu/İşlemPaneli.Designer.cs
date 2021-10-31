@@ -65,7 +65,7 @@ namespace Kütüphane_Otomasyonu
             // 
             // buttonGeriAl
             // 
-            this.buttonGeriAl.BackColor = System.Drawing.Color.Fuchsia;
+            this.buttonGeriAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.buttonGeriAl.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonGeriAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGeriAl.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));

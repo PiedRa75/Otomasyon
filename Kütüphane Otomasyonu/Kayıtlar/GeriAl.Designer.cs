@@ -44,7 +44,7 @@ namespace Kütüphane_Otomasyonu
             // 
             // buttonGeriAl
             // 
-            this.buttonGeriAl.BackColor = System.Drawing.Color.Yellow;
+            this.buttonGeriAl.BackColor = System.Drawing.Color.Teal;
             this.buttonGeriAl.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonGeriAl.ForeColor = System.Drawing.Color.White;
             this.buttonGeriAl.Location = new System.Drawing.Point(12, 12);
